@@ -1,33 +1,25 @@
-# CLAUDE.md - Ace Home Services
+# CLAUDE.md - Slate & Stem Landscapes
 
 ## Business Context
 
-**Business Name:** Ace Home Services
-**Phone:** 0414 885 813
-**Email:** acehomeservices21@gmail.com
-**Location:** Golden Plains, Geelong, and Bellarine regions of Victoria (service areas spanning Teesdale, Lara, and surrounding locations)
+**Business Name:** Slate & Stem Landscapes
+**Phone:** 0403 025 777
+**Email:** sslandscaping@gmail.com
+**Location:** Bowral, NSW - servicing the Southern Highlands, Illawarra, and MacArthur regions
+**Hours:** Always open - flexible availability
 
 ### About
-- Professional residential and commercial cleaning services
-- NDIS and DVA approved
-- Eco-friendly cleaning approach
-- Known for before-and-after content showcasing quality work across a range of cleaning tasks including bathrooms and more
+- Landscaping company specialising in both one-off transformation projects and long-term garden upkeep
+- Work spans practical and aesthetic landscaping
+- From slashing overgrown acre blocks and removing problem trees through to polished paving and tiling jobs
 
 ### Services
-- Residential Cleaning
-- Commercial Cleaning
-- NDIS Cleaning Services
-- DVA Cleaning Services
-- Eco-Friendly Cleaning
-
-### Client Types
-- Residential
-- Commercial
-- NDIS participants
-- DVA clients
-
-### Social Media
-- Facebook (475 followers, active community engagement)
+- Small Earthworks
+- Paving and Tiling
+- Full Yard Makeovers
+- Ongoing Maintenance
+- Land Clearing / Slashing
+- Tree Removal
 
 ---
 
@@ -79,7 +71,7 @@
 
 ## Deployment
 - **Always deploy changes to GitHub and Vercel** after making code changes.
-- Git remote: `origin` at `https://github.com/suterasites/JRFloorSandingandRefinishing.git`
+- Git remote: `origin` at `https://github.com/suterasites/SlateNStemLandscaping.git`
 - Push to `main` branch, then deploy to Vercel with `vercel --prod --yes`.
 
 ## Hard Rules
