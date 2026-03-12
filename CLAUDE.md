@@ -27,7 +27,7 @@
 - DVA clients
 
 ### Social Media
-- Facebook (488 followers, active community engagement)
+- Facebook (475 followers, active community engagement)
 
 ---
 
