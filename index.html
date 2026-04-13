@@ -252,6 +252,36 @@
 
     .gallery-item.is-hidden { display: none; }
 
+    /* Mobile: hide filter bar and convert grid to 2-up horizontal slider */
+    @media (max-width: 639px) {
+      #gallery-filters { display: none; }
+
+      .gallery-grid {
+        display: flex;
+        grid-template-columns: none;
+        grid-auto-rows: auto;
+        grid-auto-flow: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 0;
+        gap: 0.75rem;
+        padding-bottom: 0.75rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .gallery-grid::-webkit-scrollbar { display: none; }
+
+      .gallery-grid .gallery-item {
+        flex: 0 0 calc((100% - 0.75rem) / 2);
+        height: 220px;
+        scroll-snap-align: none;
+      }
+      .gallery-grid .gallery-item:nth-child(odd) {
+        scroll-snap-align: start;
+      }
+    }
+
     /* Lightbox */
     .lightbox {
       position: fixed;
@@ -737,7 +767,7 @@
       </div>
 
       <!-- Filter -->
-      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 sm:mb-12" role="tablist" aria-label="Filter gallery by category">
+      <div id="gallery-filters" class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 sm:mb-12" role="tablist" aria-label="Filter gallery by category">
         <button type="button" class="gallery-filter is-active" data-filter="all" aria-pressed="true">All Projects</button>
         <button type="button" class="gallery-filter" data-filter="commercial" aria-pressed="false">Commercial</button>
         <button type="button" class="gallery-filter" data-filter="residential" aria-pressed="false">Residential</button>
