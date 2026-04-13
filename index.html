@@ -280,6 +280,59 @@
       .gallery-grid .gallery-item:nth-child(odd) {
         scroll-snap-align: start;
       }
+
+      /* Swipe hint + pagination dots */
+      .gallery-swipe-hint {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 0.875rem;
+        font-size: 0.65rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: #6b7280;
+        transition: opacity 350ms ease;
+      }
+      .gallery-swipe-hint.is-faded { opacity: 0; pointer-events: none; }
+      .gallery-swipe-hint svg {
+        width: 1.1rem;
+        height: 1.1rem;
+        color: #4AADE8;
+        animation: swipe-nudge 1.6s ease-in-out infinite;
+      }
+      @keyframes swipe-nudge {
+        0%, 100% { transform: translateX(0); }
+        50%      { transform: translateX(6px); }
+      }
+
+      .gallery-dots {
+        display: flex;
+        justify-content: center;
+        gap: 0.45rem;
+        margin-top: 0.75rem;
+      }
+      .gallery-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 9999px;
+        background: #d1d5db;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        transition: background-color 250ms ease, width 250ms ease;
+      }
+      .gallery-dot.is-active {
+        background: #4AADE8;
+        width: 22px;
+      }
+      .gallery-dot:focus-visible { outline: 2px solid #4AADE8; outline-offset: 2px; }
+    }
+
+    /* Hide swipe hint + dots on desktop */
+    @media (min-width: 640px) {
+      .gallery-swipe-hint, .gallery-dots { display: none; }
     }
 
     /* Lightbox */
@@ -550,6 +603,56 @@
         document.addEventListener('keydown', function(e) {
           if (e.key === 'Escape') closeLightbox();
         });
+      }
+
+      // Mobile gallery slider: pagination dots + swipe hint
+      var grid = document.getElementById('gallery-grid');
+      var dotsWrap = document.getElementById('gallery-dots');
+      var swipeHint = document.getElementById('gallery-swipe-hint');
+      if (grid && dotsWrap) {
+        var slideCount = Math.ceil(items.length / 2);
+        var dots = [];
+        for (var i = 0; i < slideCount; i++) {
+          var d = document.createElement('button');
+          d.type = 'button';
+          d.className = 'gallery-dot' + (i === 0 ? ' is-active' : '');
+          d.setAttribute('role', 'tab');
+          d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+          d.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+          (function(idx) {
+            d.addEventListener('click', function() {
+              var slideWidth = grid.clientWidth + 12;
+              grid.scrollTo({ left: idx * slideWidth, behavior: 'smooth' });
+            });
+          })(i);
+          dotsWrap.appendChild(d);
+          dots.push(d);
+        }
+
+        var hintFaded = false;
+        var rafPending = false;
+        function syncDots() {
+          rafPending = false;
+          var slideWidth = grid.clientWidth + 12;
+          if (slideWidth <= 12) return;
+          var idx = Math.round(grid.scrollLeft / slideWidth);
+          if (idx < 0) idx = 0;
+          if (idx > dots.length - 1) idx = dots.length - 1;
+          dots.forEach(function(dot, i) {
+            var active = i === idx;
+            dot.classList.toggle('is-active', active);
+            dot.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+          if (!hintFaded && grid.scrollLeft > 8 && swipeHint) {
+            swipeHint.classList.add('is-faded');
+            hintFaded = true;
+          }
+        }
+        grid.addEventListener('scroll', function() {
+          if (rafPending) return;
+          rafPending = true;
+          requestAnimationFrame(syncDots);
+        }, { passive: true });
       }
     });
   </script>
@@ -880,6 +983,13 @@
         </figure>
 
       </div>
+
+      <!-- Mobile swipe hint + pagination dots -->
+      <p class="gallery-swipe-hint" id="gallery-swipe-hint" aria-hidden="true">
+        <span>Swipe to see more</span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </p>
+      <div class="gallery-dots" id="gallery-dots" role="tablist" aria-label="Gallery slide pagination"></div>
 
       <!-- Lightbox -->
       <div id="gallery-lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Project image preview" aria-hidden="true">
