@@ -8,6 +8,14 @@
   <meta name="keywords" content="exterior cleaning, window cleaning, post-construction cleanup, commercial cleaning, residential cleaning, Wagga Wagga, NSW">
   <meta name="robots" content="index, follow">
 
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="Assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="Assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="Assets/apple-touch-icon.png">
+  <link rel="manifest" href="Assets/site.webmanifest">
+  <meta name="theme-color" content="#1a1a1a">
+
   <!-- Open Graph -->
   <meta property="og:title" content="Fresko Cleaning | Exterior Cleaning Services in Wagga Wagga">
   <meta property="og:description" content="Wagga Wagga's exterior cleaning specialists. Window cleaning, post-construction cleanup, residential and commercial exterior cleaning.">
@@ -114,6 +122,226 @@
         linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.65) 100%),
         radial-gradient(ellipse at 30% 20%, rgba(74,173,232,0.15) 0%, transparent 60%);
     }
+
+    /* Gallery filter pills */
+    .gallery-filter {
+      padding: 0.55rem 1.1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #6b7280;
+      background: #f3f4f6;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease, transform 200ms ease;
+    }
+    .gallery-filter:hover { color: #111827; background: #e5e7eb; }
+    .gallery-filter:active { transform: translateY(1px); }
+    .gallery-filter.is-active {
+      color: #ffffff;
+      background: #4AADE8;
+      border-color: #4AADE8;
+      box-shadow: 0 6px 18px -6px rgba(74,173,232,0.55);
+    }
+    .gallery-filter:focus-visible { outline: 3px solid #4AADE8; outline-offset: 3px; }
+
+    /* Gallery grid + bento spans */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-auto-rows: 180px;
+      grid-auto-flow: dense;
+      gap: 0.75rem;
+    }
+    @media (min-width: 640px) {
+      .gallery-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); grid-auto-rows: 170px; gap: 1rem; }
+    }
+    @media (min-width: 1024px) {
+      .gallery-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: 170px; gap: 1.1rem; }
+    }
+
+    /* Bento span utilities (desktop only; mobile falls back to 1x1 of the 2-col grid) */
+    @media (min-width: 640px) {
+      .g-feature { grid-column: span 6 / span 6; grid-row: span 2 / span 2; }
+      .g-six     { grid-column: span 6 / span 6; }
+      .g-wide    { grid-column: span 4 / span 4; }
+      .g-third   { grid-column: span 3 / span 3; }
+      .g-half    { grid-column: span 3 / span 3; }
+    }
+    @media (min-width: 1024px) {
+      .g-feature { grid-column: span 6 / span 6; grid-row: span 2 / span 2; }
+      .g-six     { grid-column: span 6 / span 6; }
+      .g-wide    { grid-column: span 4 / span 4; }
+      .g-third   { grid-column: span 3 / span 3; }
+      .g-half    { grid-column: span 3 / span 3; }
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      background: #e5e7eb;
+      isolation: isolate;
+      cursor: zoom-in;
+    }
+    .gallery-item:focus-visible { outline: 3px solid #4AADE8; outline-offset: 3px; }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.01);
+      transition: transform 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .gallery-item:hover img,
+    .gallery-item:focus-within img { transform: scale(1.07); }
+
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,15,25,0.78) 0%, rgba(10,15,25,0.18) 38%, transparent 65%);
+      opacity: 0.55;
+      transition: opacity 350ms ease;
+      pointer-events: none;
+    }
+    .gallery-item:hover::after,
+    .gallery-item:focus-within::after { opacity: 0.9; }
+
+    .gallery-tag {
+      position: absolute;
+      top: 0.875rem;
+      left: 0.875rem;
+      z-index: 2;
+      padding: 0.3rem 0.65rem;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #3A8FBF;
+    }
+    .gallery-meta {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      padding: 1rem 1.125rem 1.05rem;
+      color: #ffffff;
+      transform: translateY(6px);
+      transition: transform 400ms ease;
+    }
+    .gallery-item:hover .gallery-meta,
+    .gallery-item:focus-within .gallery-meta { transform: translateY(0); }
+    .gallery-meta h3 {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      font-size: 1.1rem;
+      line-height: 1.15;
+    }
+    .gallery-meta p {
+      margin-top: 0.2rem;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.78);
+      letter-spacing: 0.02em;
+    }
+
+    .gallery-item.is-hidden { display: none; }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      background: rgba(8, 12, 20, 0.92);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      opacity: 0;
+      transition: opacity 250ms ease;
+    }
+    .lightbox.is-open {
+      display: flex;
+      opacity: 1;
+    }
+    .lightbox-inner {
+      position: relative;
+      max-width: min(1200px, 95vw);
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.9rem;
+      transform: scale(0.98);
+      transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .lightbox.is-open .lightbox-inner { transform: scale(1); }
+    .lightbox img {
+      max-width: 100%;
+      max-height: calc(90vh - 3rem);
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6);
+    }
+    .lightbox-caption {
+      color: rgba(255,255,255,0.85);
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: -3rem;
+      right: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #ffffff;
+      cursor: pointer;
+      transition: background-color 200ms ease, transform 200ms ease;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.18); }
+    .lightbox-close:active { transform: scale(0.95); }
+    .lightbox-close:focus-visible { outline: 3px solid #4AADE8; outline-offset: 2px; }
+    @media (max-width: 640px) {
+      .lightbox-close { top: -2.75rem; right: 0; }
+    }
+
+    .gallery-stat {
+      text-align: center;
+    }
+    .gallery-stat .num {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 700;
+      font-size: 2.25rem;
+      line-height: 1;
+      color: #4AADE8;
+      letter-spacing: -0.02em;
+    }
+    .gallery-stat .label {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-900 antialiased">
@@ -207,6 +435,93 @@
         lastScroll = current;
       });
     })();
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var buttons = document.querySelectorAll('.gallery-filter');
+      var items = document.querySelectorAll('#gallery-grid .gallery-item');
+      var empty = document.getElementById('gallery-empty');
+      if (!buttons.length || !items.length) return;
+
+      function applyFilter(filter) {
+        var visible = 0;
+        items.forEach(function(item) {
+          var cats = (item.getAttribute('data-category') || '').split(/\s+/);
+          var show = filter === 'all' || cats.indexOf(filter) !== -1;
+          item.classList.toggle('is-hidden', !show);
+          if (show) visible++;
+        });
+        if (empty) empty.classList.toggle('hidden', visible !== 0);
+      }
+
+      buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var filter = btn.getAttribute('data-filter');
+          buttons.forEach(function(b) {
+            var active = b === btn;
+            b.classList.toggle('is-active', active);
+            b.setAttribute('aria-pressed', active ? 'true' : 'false');
+          });
+          applyFilter(filter);
+        });
+      });
+
+      // Lightbox
+      var lightbox = document.getElementById('gallery-lightbox');
+      var lightboxImg = document.getElementById('lightbox-image');
+      var lightboxCaption = document.getElementById('lightbox-caption');
+      var lightboxClose = lightbox ? lightbox.querySelector('.lightbox-close') : null;
+      var lastFocus = null;
+
+      function openLightbox(item) {
+        var img = item.querySelector('img');
+        var titleEl = item.querySelector('.gallery-meta h3');
+        var subEl = item.querySelector('.gallery-meta p');
+        if (!img) return;
+        lightboxImg.src = img.currentSrc || img.src;
+        lightboxImg.alt = img.alt || '';
+        var title = titleEl ? titleEl.textContent.trim() : '';
+        var sub = subEl ? subEl.textContent.trim() : '';
+        lightboxCaption.textContent = title && sub ? title + ' - ' + sub : (title || sub);
+        lastFocus = document.activeElement;
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        if (lightboxClose) lightboxClose.focus();
+      }
+
+      function closeLightbox() {
+        if (!lightbox.classList.contains('is-open')) return;
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        lightboxImg.src = '';
+        if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+      }
+
+      items.forEach(function(item) {
+        item.setAttribute('role', 'button');
+        item.setAttribute('tabindex', '0');
+        item.addEventListener('click', function() { openLightbox(item); });
+        item.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openLightbox(item);
+          }
+        });
+      });
+
+      if (lightbox) {
+        lightbox.addEventListener('click', function(e) {
+          if (e.target === lightbox) closeLightbox();
+        });
+        if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') closeLightbox();
+        });
+      }
+    });
   </script>
 
   <!-- Hero Section -->
@@ -410,30 +725,155 @@
   </section>
 
   <!-- Gallery Section -->
-  <section id="gallery" class="py-20 sm:py-28 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-16">
+  <section id="gallery" class="py-20 sm:py-28 bg-white relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(ellipse at top right, rgba(74,173,232,0.055), transparent 55%), radial-gradient(ellipse at bottom left, rgba(74,173,232,0.04), transparent 55%);"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <!-- Header -->
+      <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
         <p class="text-brand font-semibold text-sm tracking-wide uppercase mb-3">Our Work</p>
-        <h2 class="text-3xl sm:text-4xl font-display text-gray-900 mb-4" style="letter-spacing: -0.03em;">See the Difference</h2>
-        <p class="text-gray-500 text-base" style="line-height: 1.7;">Real results from real properties across Wagga Wagga. Here's some of our recent cleaning work.</p>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display text-gray-900 mb-4" style="letter-spacing: -0.03em;">See the Difference</h2>
+        <p class="text-gray-500 text-base" style="line-height: 1.7;">Real results from real properties across Wagga Wagga. From dealerships and shopfronts to driveways, windows, and solar panels, here's a look at recent jobs we've delivered for local businesses and homeowners.</p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="relative overflow-hidden group">
-          <img src="Assets/Image 3.jpg" alt="Commercial exterior cleaning by Fresko Cleaning" class="w-full h-72 sm:h-80 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" style="transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          <div class="absolute inset-0 bg-brand/5 mix-blend-multiply"></div>
+      <!-- Filter -->
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 sm:mb-12" role="tablist" aria-label="Filter gallery by category">
+        <button type="button" class="gallery-filter is-active" data-filter="all" aria-pressed="true">All Projects</button>
+        <button type="button" class="gallery-filter" data-filter="commercial" aria-pressed="false">Commercial</button>
+        <button type="button" class="gallery-filter" data-filter="residential" aria-pressed="false">Residential</button>
+        <button type="button" class="gallery-filter" data-filter="windows" aria-pressed="false">Windows</button>
+        <button type="button" class="gallery-filter" data-filter="driveways" aria-pressed="false">Driveways</button>
+        <button type="button" class="gallery-filter" data-filter="solar" aria-pressed="false">Solar Panels</button>
+      </div>
+
+      <!-- Bento Grid -->
+      <div id="gallery-grid" class="gallery-grid">
+
+        <!-- 1. Feature: Kia dealership -->
+        <figure class="gallery-item g-feature" data-category="commercial">
+          <img src="Assets/commercial-kia-dealership.jpeg" alt="Kia dealership exterior cleaned by Fresko Cleaning" loading="lazy">
+          <span class="gallery-tag">Commercial</span>
+          <figcaption class="gallery-meta">
+            <h3>Kia Dealership</h3>
+            <p>Full exterior and glass detail</p>
+          </figcaption>
+        </figure>
+
+        <!-- 2. Modern home -->
+        <figure class="gallery-item g-third" data-category="residential">
+          <img src="Assets/residential-modern-house.jpeg" alt="Modern residential home exterior cleaned in Wagga Wagga" loading="lazy">
+          <span class="gallery-tag">Residential</span>
+          <figcaption class="gallery-meta">
+            <h3>Modern Home Exterior</h3>
+            <p>Turvey Park, NSW</p>
+          </figcaption>
+        </figure>
+
+        <!-- 3. Enzo storefront -->
+        <figure class="gallery-item g-third" data-category="commercial windows">
+          <img src="Assets/commercial-enzo-storefront.jpeg" alt="Enzo storefront window cleaning" loading="lazy">
+          <span class="gallery-tag">Windows</span>
+          <figcaption class="gallery-meta">
+            <h3>Enzo Storefront</h3>
+            <p>Shopfront window clean</p>
+          </figcaption>
+        </figure>
+
+        <!-- 4. Thomas Bros -->
+        <figure class="gallery-item g-third" data-category="commercial">
+          <img src="Assets/commercial-thomas-bros-dealership.jpeg" alt="Thomas Bros dealership exterior cleaning" loading="lazy">
+          <span class="gallery-tag">Commercial</span>
+          <figcaption class="gallery-meta">
+            <h3>Thomas Bros Motors</h3>
+            <p>Dealership forecourt</p>
+          </figcaption>
+        </figure>
+
+        <!-- 5. Pirtek -->
+        <figure class="gallery-item g-third" data-category="commercial">
+          <img src="Assets/commercial-pirtek-storefront.jpeg" alt="Pirtek storefront exterior cleaning" loading="lazy">
+          <span class="gallery-tag">Commercial</span>
+          <figcaption class="gallery-meta">
+            <h3>Pirtek Wagga</h3>
+            <p>Industrial storefront</p>
+          </figcaption>
+        </figure>
+
+        <!-- 6. Oliver's -->
+        <figure class="gallery-item g-six" data-category="commercial windows">
+          <img src="Assets/commercial-olivers-cafe.jpeg" alt="Oliver's window and exterior cleaning" loading="lazy">
+          <span class="gallery-tag">Windows</span>
+          <figcaption class="gallery-meta">
+            <h3>Oliver's</h3>
+            <p>Storefront frontage and glass</p>
+          </figcaption>
+        </figure>
+
+        <!-- 7. Commercial building sunset -->
+        <figure class="gallery-item g-six" data-category="commercial">
+          <img src="Assets/commercial-building-sunset.jpeg" alt="Commercial building exterior at sunset" loading="lazy">
+          <span class="gallery-tag">Commercial</span>
+          <figcaption class="gallery-meta">
+            <h3>Commercial Exterior</h3>
+            <p>Post-build exterior clean</p>
+          </figcaption>
+        </figure>
+
+        <!-- 10. Driveway 2 -->
+        <figure class="gallery-item g-wide" data-category="residential driveways">
+          <img src="Assets/residential-clean-driveway-2.jpeg" alt="Restored concrete driveway in Wagga Wagga" loading="lazy">
+          <span class="gallery-tag">Driveway</span>
+          <figcaption class="gallery-meta">
+            <h3>Concrete Clean</h3>
+            <p>Stain and grime removal</p>
+          </figcaption>
+        </figure>
+
+        <!-- 11. Solar before -->
+        <figure class="gallery-item g-wide" data-category="solar">
+          <img src="Assets/solar-panel-dirty-before.jpeg" alt="Dirty solar panels before Fresko Cleaning service" loading="lazy">
+          <span class="gallery-tag">Solar: Before</span>
+          <figcaption class="gallery-meta">
+            <h3>Dirty Panels</h3>
+            <p>Dust, bird mess, output loss</p>
+          </figcaption>
+        </figure>
+
+        <!-- 12. Solar after -->
+        <figure class="gallery-item g-wide" data-category="solar">
+          <img src="Assets/solar-panels-clean-after.jpeg" alt="Clean solar panels after Fresko Cleaning service" loading="lazy">
+          <span class="gallery-tag">Solar: After</span>
+          <figcaption class="gallery-meta">
+            <h3>Freshly Cleaned</h3>
+            <p>Restored efficiency</p>
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <!-- Lightbox -->
+      <div id="gallery-lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Project image preview" aria-hidden="true">
+        <div class="lightbox-inner">
+          <button type="button" class="lightbox-close" aria-label="Close preview">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+          <img id="lightbox-image" src="" alt="">
+          <p id="lightbox-caption" class="lightbox-caption"></p>
         </div>
-        <div class="relative overflow-hidden group">
-          <img src="Assets/Image 4.jpg" alt="Residential cleaning completed by Fresko Cleaning" class="w-full h-72 sm:h-80 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" style="transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          <div class="absolute inset-0 bg-brand/5 mix-blend-multiply"></div>
-        </div>
-        <div class="relative overflow-hidden group sm:col-span-2 lg:col-span-1">
-          <img src="Assets/Image 5.jpg" alt="Window cleaning work by Fresko Cleaning" class="w-full h-72 sm:h-80 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" style="transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          <div class="absolute inset-0 bg-brand/5 mix-blend-multiply"></div>
-        </div>
+      </div>
+
+      <!-- Empty state -->
+      <div id="gallery-empty" class="hidden text-center py-12">
+        <p class="text-gray-500 text-sm" style="line-height: 1.7;">No projects in this category yet. Check back soon.</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-14 sm:mt-16">
+        <p class="text-gray-500 text-sm mb-5" style="line-height: 1.7;">Want your property to look this fresh?</p>
+        <a href="#contact" class="btn-primary inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand text-white font-semibold text-xs tracking-widest uppercase hover:bg-brand-dark transition-colors duration-200">
+          Get a Free Quote
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
       </div>
     </div>
   </section>

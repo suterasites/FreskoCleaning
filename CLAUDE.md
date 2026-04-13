@@ -78,9 +78,7 @@
 - **Depth:** Surfaces should have a layering system (base → elevated → floating), not all sit at the same z-plane.
 
 ## Deployment
-- **Always deploy changes to GitHub and Vercel** after making code changes.
-- Git remote: `origin` (check with `git remote -v` for current URL)
-- Push to `main` branch, then deploy to Vercel with `vercel --prod --yes`.
+- **Always deploy changes to GitHub and Cloudflare** after making code changes.
 
 ## Hard Rules
 - Do not add sections, features, or content not in the reference
