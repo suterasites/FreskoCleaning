@@ -688,118 +688,87 @@
 
 
   <!-- Services Section -->
-  <section id="services" class="py-20 sm:py-28 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="text-brand font-semibold text-sm tracking-wide uppercase mb-3">What We Do</p>
-        <h2 class="text-3xl sm:text-4xl font-display text-gray-900 mb-4" style="letter-spacing: -0.03em;">Our Services</h2>
-        <p class="text-gray-500 text-base" style="line-height: 1.7;">From sparkling windows to spotless post-build sites, we handle the exterior cleaning so you don't have to.</p>
+  <section id="services" class="py-20 sm:py-28 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Split header -->
+      <div class="grid md:grid-cols-2 gap-8 md:gap-12 mb-10 sm:mb-14">
+        <div>
+          <p class="text-brand font-semibold text-sm tracking-[0.2em] uppercase mb-4 flex items-center gap-3">
+            <span class="h-px w-8 bg-brand"></span>
+            What We Do
+          </p>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display text-gray-900" style="letter-spacing: -0.03em; line-height: 1.1;">Services you can depend on</h2>
+        </div>
+        <div class="md:pt-10">
+          <p class="text-gray-500 text-base" style="line-height: 1.7;">From sparkling windows to spotless post-build sites, we deliver professional exterior cleaning across the Wagga Wagga region for residential, commercial and post-construction clients.</p>
+        </div>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Service 1: Window Cleaning -->
-        <article class="group bg-white p-8 shadow-elevated hover:shadow-floating transition-spring transition-transform duration-300 hover:-translate-y-1 border border-gray-100">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-14 h-14 overflow-hidden flex-shrink-0 shadow-elevated">
-              <img src="Assets/window-cleaning-pole-two-story.png" alt="Window cleaning with water-fed pole" class="w-full h-full object-cover" loading="lazy">
-            </div>
-            <h3 class="text-xl font-display text-gray-900">Window Cleaning</h3>
+      <!-- Feature + stacked grid -->
+      <div class="grid md:grid-cols-2 gap-4 md:gap-5">
+        <!-- Feature: Window Cleaning -->
+        <a href="#contact" class="group relative overflow-hidden shadow-elevated hover:shadow-floating transition-spring transition-transform duration-500 min-h-[420px] md:min-h-[620px] flex">
+          <img src="Assets/window-cleaning-pole-two-story.png" alt="Window cleaning with water-fed pole on two-storey home" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10"></div>
+          <div class="absolute inset-0 bg-brand/10 mix-blend-multiply"></div>
+          <div class="relative z-10 flex flex-col justify-end p-6 sm:p-8 w-full">
+            <p class="text-brand-light font-semibold text-xs tracking-[0.2em] uppercase mb-3" style="color: #9ed6f5;">Core Service</p>
+            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-display text-white mb-3" style="letter-spacing: -0.02em;">Window Cleaning</h3>
+            <p class="text-white/85 text-sm sm:text-base mb-6 max-w-md" style="line-height: 1.6;">Crystal-clear windows for homes and businesses. Professional water-fed pole and traditional techniques for a streak-free finish, inside and out, ground level to multi-storey.</p>
+            <span class="inline-flex items-center gap-2 text-white font-semibold text-xs tracking-[0.2em] uppercase">
+              Explore Window Cleaning
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </span>
           </div>
-          <p class="text-gray-500 text-sm mb-4" style="line-height: 1.7;">Crystal-clear windows for homes and businesses. We use professional-grade equipment and techniques to deliver a streak-free finish every time.</p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Interior & exterior windows
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Screen & track cleaning
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Multi-storey & hard-to-reach glass
-            </li>
-          </ul>
-        </article>
+        </a>
 
-        <!-- Service 2: Post-Construction Cleanup -->
-        <article class="group bg-white p-8 shadow-elevated hover:shadow-floating transition-spring transition-transform duration-300 hover:-translate-y-1 border border-gray-100">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-14 h-14 overflow-hidden flex-shrink-0 shadow-elevated">
-              <img src="Assets/pre-handover-windows-rural-home.png" alt="Post-construction pre-handover clean" class="w-full h-full object-cover" loading="lazy">
+        <!-- Right column: stacked cards -->
+        <div class="grid gap-4 md:gap-5 md:grid-rows-3">
+          <!-- Card: Post-Construction Cleanup -->
+          <a href="#contact" class="group relative overflow-hidden shadow-elevated hover:shadow-floating transition-spring transition-transform duration-500 min-h-[180px] md:min-h-0 flex">
+            <img src="Assets/pre-handover-windows-rural-home.png" alt="Post-construction pre-handover window and exterior clean" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20"></div>
+            <div class="absolute inset-0 bg-brand/10 mix-blend-multiply"></div>
+            <div class="relative z-10 flex flex-col justify-center p-6 sm:p-7 max-w-[65%]">
+              <h3 class="text-lg sm:text-xl lg:text-2xl font-display text-white mb-2" style="letter-spacing: -0.02em;">Post-Construction Cleanup</h3>
+              <p class="text-white/80 text-xs sm:text-sm mb-4" style="line-height: 1.6;">Builder's cleans, dust and debris removal, final handover detail for new builds and renovations.</p>
+              <span class="inline-flex items-center gap-2 text-white font-semibold text-xs tracking-[0.2em] uppercase">
+                Learn More
+                <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </span>
             </div>
-            <h3 class="text-xl font-display text-gray-900">Post-Construction Cleanup</h3>
-          </div>
-          <p class="text-gray-500 text-sm mb-4" style="line-height: 1.7;">Get new builds and renovations looking their best before handover. We remove construction dust, debris, and residue so the finished product shines.</p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Builder's clean & final detail
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Dust, debris & residue removal
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Window & glass polish
-            </li>
-          </ul>
-        </article>
+          </a>
 
-        <!-- Service 3: Residential Exterior Cleaning -->
-        <article class="group bg-white p-8 shadow-elevated hover:shadow-floating transition-spring transition-transform duration-300 hover:-translate-y-1 border border-gray-100">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-14 h-14 overflow-hidden flex-shrink-0 shadow-elevated">
-              <img src="Assets/residential-clean-driveway-1.jpeg" alt="Residential driveway cleaning" class="w-full h-full object-cover" loading="lazy">
+          <!-- Card: Residential Exterior Cleaning -->
+          <a href="#contact" class="group relative overflow-hidden shadow-elevated hover:shadow-floating transition-spring transition-transform duration-500 min-h-[180px] md:min-h-0 flex">
+            <img src="Assets/residential-clean-driveway-1.jpeg" alt="Residential driveway and exterior cleaning" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20"></div>
+            <div class="absolute inset-0 bg-brand/10 mix-blend-multiply"></div>
+            <div class="relative z-10 flex flex-col justify-center p-6 sm:p-7 max-w-[65%]">
+              <h3 class="text-lg sm:text-xl lg:text-2xl font-display text-white mb-2" style="letter-spacing: -0.02em;">Residential Exterior</h3>
+              <p class="text-white/80 text-xs sm:text-sm mb-4" style="line-height: 1.6;">Pressure washing, driveways, gutters, solar panels, walls and facades, across Wagga Wagga homes.</p>
+              <span class="inline-flex items-center gap-2 text-white font-semibold text-xs tracking-[0.2em] uppercase">
+                Learn More
+                <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </span>
             </div>
-            <h3 class="text-xl font-display text-gray-900">Residential Exterior Cleaning</h3>
-          </div>
-          <p class="text-gray-500 text-sm mb-4" style="line-height: 1.7;">Bring back the curb appeal. From driveways and paths to gutters, solar panels, walls and facades, we clean the exterior of your home to look its absolute best.</p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Pressure washing & driveways
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Gutter cleaning
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Solar panel cleaning
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Wall & facade wash
-            </li>
-          </ul>
-        </article>
+          </a>
 
-        <!-- Service 4: Commercial Exterior Cleaning -->
-        <article class="group bg-white p-8 shadow-elevated hover:shadow-floating transition-spring transition-transform duration-300 hover:-translate-y-1 border border-gray-100">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-14 h-14 overflow-hidden flex-shrink-0 shadow-elevated">
-              <img src="Assets/commercial-kia-dealership.jpeg" alt="Commercial exterior cleaning at Kia dealership" class="w-full h-full object-cover" loading="lazy">
+          <!-- Card: Commercial Exterior Cleaning -->
+          <a href="#contact" class="group relative overflow-hidden shadow-elevated hover:shadow-floating transition-spring transition-transform duration-500 min-h-[180px] md:min-h-0 flex">
+            <img src="Assets/commercial-kia-dealership.jpeg" alt="Commercial exterior cleaning at Kia dealership" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20"></div>
+            <div class="absolute inset-0 bg-brand/10 mix-blend-multiply"></div>
+            <div class="relative z-10 flex flex-col justify-center p-6 sm:p-7 max-w-[65%]">
+              <h3 class="text-lg sm:text-xl lg:text-2xl font-display text-white mb-2" style="letter-spacing: -0.02em;">Commercial Exterior</h3>
+              <p class="text-white/80 text-xs sm:text-sm mb-4" style="line-height: 1.6;">Shopfronts, signage, car parks and scheduled maintenance cleans for retail and industrial sites.</p>
+              <span class="inline-flex items-center gap-2 text-white font-semibold text-xs tracking-[0.2em] uppercase">
+                Learn More
+                <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </span>
             </div>
-            <h3 class="text-xl font-display text-gray-900">Commercial Exterior Cleaning</h3>
-          </div>
-          <p class="text-gray-500 text-sm mb-4" style="line-height: 1.7;">Keep your business looking professional. We work with commercial properties, retail shopfronts, and industrial sites to maintain a clean, welcoming exterior.</p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Shopfront & signage cleaning
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Car park & entry cleaning
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-brand flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Scheduled maintenance cleans
-            </li>
-          </ul>
-        </article>
+          </a>
+        </div>
       </div>
     </div>
   </section>
