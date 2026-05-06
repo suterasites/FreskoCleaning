@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fresko Cleaning | Exterior Cleaning Services in Wagga Wagga</title>
+  <title>Exterior Cleaning Wagga Wagga | Fresko Cleaning</title>
   <meta name="description" content="Wagga Wagga's exterior cleaning specialists. Window cleaning, post-construction cleanup, residential and commercial exterior cleaning. Call 0407 669 694.">
-  <meta name="keywords" content="exterior cleaning, window cleaning, post-construction cleanup, commercial cleaning, residential cleaning, Wagga Wagga, NSW">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="opkQp5Lf75escMB87HQmGVFm6uDr0M-Tu39Wz05U00g" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://freskocleaning.com.au/">
+
+  <!-- Geo meta -->
+  <meta name="geo.region" content="AU-NSW">
+  <meta name="geo.placename" content="Wagga Wagga">
+  <meta name="geo.position" content="-35.117275;147.356720">
+  <meta name="ICBM" content="-35.117275, 147.356720">
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="Assets/favicon.svg">
@@ -18,33 +26,108 @@
   <meta name="theme-color" content="#1a1a1a">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Fresko Cleaning | Exterior Cleaning Services in Wagga Wagga">
+  <meta property="og:title" content="Exterior Cleaning Wagga Wagga | Fresko Cleaning">
   <meta property="og:description" content="Wagga Wagga's exterior cleaning specialists. Window cleaning, post-construction cleanup, residential and commercial exterior cleaning.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_AU">
+  <meta property="og:site_name" content="Fresko Cleaning">
+  <meta property="og:url" content="https://freskocleaning.com.au/">
+  <meta property="og:image" content="https://freskocleaning.com.au/Assets/Image%201%20-%20Hero.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="900">
+  <meta property="og:image:alt" content="Fresko Cleaning - exterior cleaning services in Wagga Wagga">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Exterior Cleaning Wagga Wagga | Fresko Cleaning">
+  <meta name="twitter:description" content="Window cleaning, post-construction cleanup, residential and commercial exterior cleaning across Wagga Wagga.">
+  <meta name="twitter:image" content="https://freskocleaning.com.au/Assets/Image%201%20-%20Hero.jpg">
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Fresko Cleaning",
-    "description": "Exterior cleaning business based in Wagga Wagga, NSW, servicing both residential and commercial clients with window cleaning, post-construction cleanup, and general exterior cleaning.",
-    "telephone": "+61407669694",
-    "email": "fresko.group.au@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Turvey Park",
-      "addressLocality": "Wagga Wagga",
-      "addressRegion": "NSW",
-      "postalCode": "2650",
-      "addressCountry": "AU"
-    },
-    "areaServed": [
-      { "@type": "Place", "name": "Wagga Wagga" }
-    ],
-    "serviceType": ["Window Cleaning", "Post-Construction Cleanup", "Exterior Cleaning (Residential)", "Exterior Cleaning (Commercial)"],
-    "priceRange": "$$"
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://freskocleaning.com.au/#business",
+        "name": "Fresko Cleaning",
+        "url": "https://freskocleaning.com.au/",
+        "image": "https://freskocleaning.com.au/Assets/Image%201%20-%20Hero.jpg",
+        "logo": "https://freskocleaning.com.au/Assets/Logo.png",
+        "description": "Exterior cleaning business based in Wagga Wagga, NSW, servicing both residential and commercial clients with window cleaning, post-construction cleanup, and general exterior cleaning.",
+        "telephone": "+61407669694",
+        "email": "fresko.group.au@gmail.com",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Turvey Park",
+          "addressLocality": "Wagga Wagga",
+          "addressRegion": "NSW",
+          "postalCode": "2650",
+          "addressCountry": "AU"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -35.117275,
+          "longitude": 147.356720
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Wagga Wagga" },
+          { "@type": "AdministrativeArea", "name": "Riverina, NSW" }
+        ],
+        "sameAs": [
+          "https://www.instagram.com/fresko.cleaning/",
+          "https://www.facebook.com/profile.php?id=61579179191780"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://freskocleaning.com.au/#website",
+        "url": "https://freskocleaning.com.au/",
+        "name": "Fresko Cleaning",
+        "publisher": { "@id": "https://freskocleaning.com.au/#business" },
+        "inLanguage": "en-AU"
+      },
+      {
+        "@type": "Service",
+        "name": "Window Cleaning",
+        "serviceType": "Window Cleaning",
+        "provider": { "@id": "https://freskocleaning.com.au/#business" },
+        "areaServed": { "@type": "City", "name": "Wagga Wagga" },
+        "url": "https://freskocleaning.com.au/#services"
+      },
+      {
+        "@type": "Service",
+        "name": "Post-Construction Cleanup",
+        "serviceType": "Post-Construction Cleaning",
+        "provider": { "@id": "https://freskocleaning.com.au/#business" },
+        "areaServed": { "@type": "City", "name": "Wagga Wagga" },
+        "url": "https://freskocleaning.com.au/#services"
+      },
+      {
+        "@type": "Service",
+        "name": "Residential Exterior Cleaning",
+        "serviceType": "Pressure Washing",
+        "provider": { "@id": "https://freskocleaning.com.au/#business" },
+        "areaServed": { "@type": "City", "name": "Wagga Wagga" },
+        "url": "https://freskocleaning.com.au/#services"
+      },
+      {
+        "@type": "Service",
+        "name": "Commercial Exterior Cleaning",
+        "serviceType": "Commercial Exterior Cleaning",
+        "provider": { "@id": "https://freskocleaning.com.au/#business" },
+        "areaServed": { "@type": "City", "name": "Wagga Wagga" },
+        "url": "https://freskocleaning.com.au/#services"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freskocleaning.com.au/" }
+        ]
+      }
+    ]
   }
   </script>
 
@@ -146,6 +229,22 @@
       box-shadow: 0 6px 18px -6px rgba(74,173,232,0.55);
     }
     .gallery-filter:focus-visible { outline: 3px solid #4AADE8; outline-offset: 3px; }
+
+    /* Skip-to-content link (visible on focus only) */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #1a1a1a;
+      color: #ffffff;
+      padding: 0.75rem 1.25rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+      z-index: 100;
+      text-decoration: none;
+      transition: top 200ms ease;
+    }
+    .skip-link:focus { top: 0; outline: 3px solid #4AADE8; outline-offset: 0; }
 
     /* Gallery grid + bento spans */
     .gallery-grid {
@@ -430,12 +529,14 @@
 </head>
 <body class="bg-white text-gray-900 antialiased">
 
+  <a href="#main" class="skip-link">Skip to main content</a>
+
   <!-- Navigation -->
   <nav id="main-nav" class="fixed top-0 w-full z-50 bg-white backdrop-blur-sm border-b border-gray-200 transition-transform duration-300" role="navigation" aria-label="Main navigation">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 sm:h-20">
         <a href="#" class="flex items-center gap-3" aria-label="Fresko Cleaning home">
-          <img src="Assets/Transparent.png" alt="Fresko Cleaning logo" class="h-12 sm:h-14 w-auto">
+          <img src="Assets/Transparent.png" alt="Fresko Cleaning logo" width="200" height="56" class="h-12 sm:h-14 w-auto">
         </a>
         <div class="hidden md:flex items-center gap-8">
           <a href="#services" class="text-sm font-medium text-gray-600 hover:text-brand transition-colors duration-200">Services</a>
@@ -658,10 +759,12 @@
     });
   </script>
 
+  <main id="main">
+
   <!-- Hero Section -->
   <header class="relative min-h-[90vh] sm:min-h-screen flex flex-col overflow-hidden grain" id="hero">
     <div class="absolute inset-0">
-      <img src="Assets/Image 1 - Hero.jpg" alt="Fresko Cleaning - exterior cleaning services in Wagga Wagga" class="w-full h-full object-cover" loading="eager">
+      <img src="Assets/Image 1 - Hero.jpg" alt="Fresko Cleaning - exterior cleaning services in Wagga Wagga" width="1920" height="1080" class="w-full h-full object-cover" loading="eager" fetchpriority="high">
       <div class="hero-gradient absolute inset-0 mix-blend-multiply"></div>
     </div>
 
@@ -709,7 +812,7 @@
       <div class="grid md:grid-cols-2 gap-4 md:gap-5">
         <!-- Feature: Residential Exterior Cleaning -->
         <a href="#contact" class="group relative overflow-hidden shadow-elevated hover:shadow-floating transition-spring transition-transform duration-500 min-h-[420px] md:min-h-[620px] flex">
-          <img src="Assets/surface-cleaner-concrete-action.jpeg" alt="Pressure washer surface cleaner showing the dirty vs clean difference on a concrete path" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy">
+          <img src="Assets/surface-cleaner-concrete-action.jpeg" alt="Pressure washer surface cleaner showing the dirty vs clean difference on a concrete path" width="800" height="1000" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy">
           <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10"></div>
           <div class="absolute inset-0 bg-brand/10 mix-blend-multiply"></div>
           <div class="relative z-10 flex flex-col justify-end p-6 sm:p-8 w-full">
@@ -727,7 +830,7 @@
         <div class="grid gap-4 md:gap-5 md:grid-rows-3">
           <!-- Card: Post-Construction Cleanup -->
           <a href="#contact" class="group relative overflow-hidden shadow-elevated hover:shadow-floating transition-spring transition-transform duration-500 min-h-[180px] md:min-h-0 flex">
-            <img src="Assets/Image 5.jpg" alt="Newly completed home after post-construction clean" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy">
+            <img src="Assets/Image 5.jpg" alt="Newly completed home after post-construction clean" width="800" height="500" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy">
             <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20"></div>
             <div class="absolute inset-0 bg-brand/10 mix-blend-multiply"></div>
             <div class="relative z-10 flex flex-col justify-center p-6 sm:p-7 max-w-[65%]">
@@ -742,7 +845,7 @@
 
           <!-- Card: Window Cleaning -->
           <a href="#contact" class="group relative overflow-hidden shadow-elevated hover:shadow-floating transition-spring transition-transform duration-500 min-h-[180px] md:min-h-0 flex">
-            <img src="Assets/Image 1 - Hero.jpg" alt="Window cleaning with water-fed pole at a commercial property" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy">
+            <img src="Assets/Image 1 - Hero.jpg" alt="Window cleaning with water-fed pole at a commercial property" width="800" height="500" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy">
             <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20"></div>
             <div class="absolute inset-0 bg-brand/10 mix-blend-multiply"></div>
             <div class="relative z-10 flex flex-col justify-center p-6 sm:p-7 max-w-[65%]">
@@ -757,7 +860,7 @@
 
           <!-- Card: Commercial Exterior Cleaning -->
           <a href="#contact" class="group relative overflow-hidden shadow-elevated hover:shadow-floating transition-spring transition-transform duration-500 min-h-[180px] md:min-h-0 flex">
-            <img src="Assets/commercial-kia-dealership.jpeg" alt="Commercial exterior cleaning at Kia dealership" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy">
+            <img src="Assets/commercial-kia-dealership.jpeg" alt="Commercial exterior cleaning at Kia dealership" width="800" height="500" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy">
             <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20"></div>
             <div class="absolute inset-0 bg-brand/10 mix-blend-multiply"></div>
             <div class="relative z-10 flex flex-col justify-center p-6 sm:p-7 max-w-[65%]">
@@ -782,7 +885,7 @@
         <div class="relative">
           <div class="overflow-hidden shadow-floating">
             <div class="relative">
-              <img src="Assets/Image 2.jpg" alt="The Fresko Cleaning team" class="w-full h-[400px] sm:h-[500px] object-cover" loading="lazy">
+              <img src="Assets/Image 2.jpg" alt="The Fresko Cleaning team" width="800" height="500" class="w-full h-[400px] sm:h-[500px] object-cover" loading="lazy">
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
               <div class="absolute inset-0 bg-brand/10 mix-blend-multiply"></div>
             </div>
@@ -860,7 +963,7 @@
 
         <!-- 1. Feature: Kia dealership -->
         <figure class="gallery-item g-feature" data-category="commercial">
-          <img src="Assets/commercial-kia-dealership.jpeg" alt="Kia dealership exterior cleaned by Fresko Cleaning" loading="lazy">
+          <img src="Assets/commercial-kia-dealership.jpeg" alt="Kia dealership exterior cleaned by Fresko Cleaning" width="800" height="600" loading="lazy">
           <span class="gallery-tag">Commercial</span>
           <figcaption class="gallery-meta">
             <h3>Kia Dealership</h3>
@@ -870,7 +973,7 @@
 
         <!-- 2. Modern home -->
         <figure class="gallery-item g-third" data-category="residential">
-          <img src="Assets/residential-modern-house.jpeg" alt="Modern residential home exterior cleaned in Wagga Wagga" loading="lazy">
+          <img src="Assets/residential-modern-house.jpeg" alt="Modern residential home exterior cleaned in Wagga Wagga" width="800" height="600" loading="lazy">
           <span class="gallery-tag">Residential</span>
           <figcaption class="gallery-meta">
             <h3>Modern Home Exterior</h3>
@@ -880,7 +983,7 @@
 
         <!-- 3. Epizo storefront -->
         <figure class="gallery-item g-third" data-category="commercial windows">
-          <img src="Assets/commercial-epizo-storefront.jpeg" alt="Epizo storefront window cleaning" loading="lazy">
+          <img src="Assets/commercial-epizo-storefront.jpeg" alt="Epizo storefront window cleaning" width="800" height="600" loading="lazy">
           <span class="gallery-tag">Windows</span>
           <figcaption class="gallery-meta">
             <h3>Epizo Storefront</h3>
@@ -890,7 +993,7 @@
 
         <!-- 4. Thomas Bros -->
         <figure class="gallery-item g-third" data-category="commercial">
-          <img src="Assets/commercial-thomas-bros-dealership.jpeg" alt="Thomas Bros dealership exterior cleaning" loading="lazy">
+          <img src="Assets/commercial-thomas-bros-dealership.jpeg" alt="Thomas Bros dealership exterior cleaning" width="800" height="600" loading="lazy">
           <span class="gallery-tag">Commercial</span>
           <figcaption class="gallery-meta">
             <h3>Thomas Bros Motors</h3>
@@ -900,7 +1003,7 @@
 
         <!-- 5. Pirtek -->
         <figure class="gallery-item g-third" data-category="commercial">
-          <img src="Assets/commercial-pirtek-storefront.jpeg" alt="Pirtek storefront exterior cleaning" loading="lazy">
+          <img src="Assets/commercial-pirtek-storefront.jpeg" alt="Pirtek storefront exterior cleaning" width="800" height="600" loading="lazy">
           <span class="gallery-tag">Commercial</span>
           <figcaption class="gallery-meta">
             <h3>Pirtek Wagga</h3>
@@ -910,7 +1013,7 @@
 
         <!-- 6. Oliver's -->
         <figure class="gallery-item g-six" data-category="commercial windows">
-          <img src="Assets/commercial-olivers-cafe.jpeg" alt="Oliver's window and exterior cleaning" loading="lazy">
+          <img src="Assets/commercial-olivers-cafe.jpeg" alt="Oliver's window and exterior cleaning" width="800" height="600" loading="lazy">
           <span class="gallery-tag">Windows</span>
           <figcaption class="gallery-meta">
             <h3>Oliver's</h3>
@@ -920,7 +1023,7 @@
 
         <!-- 7. Commercial building sunset -->
         <figure class="gallery-item g-six" data-category="commercial">
-          <img src="Assets/commercial-building-sunset.jpeg" alt="Commercial building exterior at sunset" loading="lazy">
+          <img src="Assets/commercial-building-sunset.jpeg" alt="Commercial building exterior at sunset" width="800" height="600" loading="lazy">
           <span class="gallery-tag">Commercial</span>
           <figcaption class="gallery-meta">
             <h3>Commercial Exterior</h3>
@@ -930,7 +1033,7 @@
 
         <!-- 10. Driveway 2 -->
         <figure class="gallery-item g-wide" data-category="residential driveways">
-          <img src="Assets/residential-clean-driveway-2.jpeg" alt="Restored concrete driveway in Wagga Wagga" loading="lazy">
+          <img src="Assets/residential-clean-driveway-2.jpeg" alt="Restored concrete driveway in Wagga Wagga" width="800" height="600" loading="lazy">
           <span class="gallery-tag">Driveway</span>
           <figcaption class="gallery-meta">
             <h3>Concrete Clean</h3>
@@ -940,7 +1043,7 @@
 
         <!-- 11. Solar before -->
         <figure class="gallery-item g-wide" data-category="solar">
-          <img src="Assets/solar-panel-dirty-before.jpeg" alt="Dirty solar panels before Fresko Cleaning service" loading="lazy">
+          <img src="Assets/solar-panel-dirty-before.jpeg" alt="Dirty solar panels before Fresko Cleaning service" width="800" height="600" loading="lazy">
           <span class="gallery-tag">Solar: Before</span>
           <figcaption class="gallery-meta">
             <h3>Dirty Panels</h3>
@@ -950,7 +1053,7 @@
 
         <!-- 12. Solar after -->
         <figure class="gallery-item g-wide" data-category="solar">
-          <img src="Assets/solar-panels-clean-after.jpeg" alt="Clean solar panels after Fresko Cleaning service" loading="lazy">
+          <img src="Assets/solar-panels-clean-after.jpeg" alt="Clean solar panels after Fresko Cleaning service" width="800" height="600" loading="lazy">
           <span class="gallery-tag">Solar: After</span>
           <figcaption class="gallery-meta">
             <h3>Freshly Cleaned</h3>
@@ -1196,13 +1299,15 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="bg-white border-t border-gray-200 py-12" role="contentinfo">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
         <div>
           <div class="mb-4">
-            <img src="Assets/Transparent.png" alt="Fresko Cleaning logo" class="h-16 w-auto">
+            <img src="Assets/Transparent.png" alt="Fresko Cleaning logo" width="200" height="64" class="h-16 w-auto">
           </div>
           <p class="text-sm text-gray-500" style="line-height: 1.7;">Exterior cleaning specialists based in Wagga Wagga, NSW. Window cleaning, post-construction cleanup, and residential and commercial exterior cleaning.</p>
         </div>
