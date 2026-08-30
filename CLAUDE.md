@@ -4,7 +4,7 @@
 
 **Business Name:** Fresko Cleaning
 **Owner:** Luke Fellows
-**Phone:** 0407 669 694
+**Phone:** 0485 026 816
 **Email:** fresko.group.au@gmail.com
 **Location:** Turvey Park, Wagga Wagga, NSW 2650
 **Clients:** Residential and commercial
