@@ -2,3 +2,6 @@ node_modules/
 temporary screenshots/
 
 .vercel
+
+# Internal notes. The host publishes everything tracked here, so this stays local.
+CLAUDE.md
